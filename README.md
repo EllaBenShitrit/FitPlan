@@ -30,7 +30,7 @@
 - Saved Workouts remain available in your list, even if their original creators later make them private.
 - Workouts can be deleted from this list.
 
-## 🛠️ Technologies Used
+## Technologies Used
 - **Language:** Kotlin
 - **External Services:**
     - Firebase Auth (user authentication, log-in & sign-up)
@@ -41,7 +41,7 @@
 ## Credit
 This project was developed by Ella Ben Shitrit as part of a final project for the Mobile Applications Development course.
 
-## 📱 How to Run the App
+## How to Run the App
 Clone the repository:
 ```bash
     git clone https://github.com/EllaBenShitrit/FitPlan.git
