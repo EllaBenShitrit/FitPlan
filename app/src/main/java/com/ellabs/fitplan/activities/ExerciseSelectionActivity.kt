@@ -160,7 +160,6 @@ class ExerciseSelectionActivity : AppCompatActivity() {
     }
 
 
-
     fun addExerciseToLocalDatabase(category: String, exercise: Exercise) {
         val prefs = getSharedPreferences("my_exercises", Context.MODE_PRIVATE)
         val key = "category_$category"
@@ -184,7 +183,7 @@ class ExerciseSelectionActivity : AppCompatActivity() {
     }
 
 
-    // Function for checking (delete exercises that I added while checking the app)
+    // Function for Debug (delete exercise that I added in "Add new exercise" option)
     fun removeExerciseFromLocalDatabase(category: String, exerciseName: String) {
         val prefs = getSharedPreferences("my_exercises", Context.MODE_PRIVATE)
         val key = "category_$category"
