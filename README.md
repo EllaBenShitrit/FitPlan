@@ -26,7 +26,7 @@
 - "Save Workout" adds the public workout to your personal saved list.
 
 # Saved Workouts 📥
-- List of workouts that user saved from Social Media.
+- List of workouts you saved from Social Media.
 - Saved Workouts remain available in your list, even if their original creators later make them private.
 - Workouts can be deleted from this list.
 
