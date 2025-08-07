@@ -34,9 +34,6 @@ class ExerciseSelectionActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_exercise_selection)
 
-        //removeExerciseFromLocalDatabase("lower_body", "leg press")
-
-
         recyclerView = findViewById(R.id.recyclerViewExercises)
         btnSave = findViewById(R.id.btnSave)
         adapter = ExerciseSelectionAdapter(allExercises, selectedExercises)
