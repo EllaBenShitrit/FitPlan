@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="#B3E5FC">
+
+    <Button
+        android:id="@+id/btnBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Back"
+        android:layout_alignParentStart="true"
+        android:layout_margin="20dp"
+        android:backgroundTint="#4FC3F7"
+        android:textColor="#000000"/>
+
+    <EditText
+        android:id="@+id/etWorkoutName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Workout name"
+        android:layout_below="@id/btnBack"
+        android:layout_marginTop="80dp"/>
+
+    <TextView
+        android:id="@+id/tvChooseCategory"
+        android:textColor="#000000"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pick a category to choose your exercises:"
+        android:textStyle="bold"
+        android:textSize="19sp"
+        android:layout_below="@id/etWorkoutName"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="70dp"/>
+
+    <!-- כפתורי קטגוריות -->
+    <LinearLayout
+        android:id="@+id/categoryButtons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvChooseCategory"
+        android:orientation="horizontal"
+        android:layout_marginTop="8dp"
+        android:gravity="center_horizontal">
+
+        <Button
+            android:id="@+id/btnUpperBody"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#9966CC"
+            android:textColor="#000000"
+            android:text="Upper Body" />
+
+        <Button
+            android:id="@+id/btnLowerBody"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Lower Body"
+            android:backgroundTint="#9966CC"
+            android:textColor="#000000"
+            android:layout_marginStart="8dp"/>
+
+        <Button
+            android:id="@+id/btnCardio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cardio"
+            android:backgroundTint="#9966CC"
+            android:textColor="#000000"
+            android:layout_marginStart="8dp"/>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvSelectedExercises"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Selected exercises:"
+        android:layout_below="@id/categoryButtons"
+        android:textColor="#000000"
+        android:textSize="19sp"
+        android:textStyle="bold"
+        android:layout_marginTop="50dp"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewSelectedExercises"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_below="@id/tvSelectedExercises"
+        android:layout_marginTop="8dp"/>
+
+    <Button
+        android:id="@+id/btnSaveWorkout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Save Workout"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="24dp"
+        android:backgroundTint="#4FC3F7"
+        android:textColor="#000000"/>
+</RelativeLayout>

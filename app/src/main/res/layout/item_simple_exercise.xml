@@ -1,0 +1,48 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="12dp">
+
+    <TextView
+        android:id="@+id/tvExerciseNameOnly"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:textColor="#000000"/>
+
+    <LinearLayout
+        android:id="@+id/llWeightContainer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="#FFFFFFFF"
+        android:padding="8dp">
+
+        <EditText
+            android:id="@+id/etExerciseWeight"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:hint="0"
+            android:inputType="numberDecimal"
+            android:textSize="14sp"
+            android:gravity="center"
+            android:textColor="#000000"/>
+
+        <TextView
+            android:id="@+id/tvKg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="kg"
+            android:textColor="#000000"
+            android:textSize="14sp"
+            android:layout_marginStart="4dp"/>
+    </LinearLayout>
+
+</LinearLayout>
+
+
+
+

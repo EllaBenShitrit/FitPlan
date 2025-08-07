@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    card_view:cardCornerRadius="16dp"
+    card_view:cardElevation="4dp"
+    android:backgroundTint="#F0F0F0">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/tvWorkoutTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Workout Title"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="#000000" />
+
+        <TextView
+            android:id="@+id/tvUsername"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="by username"
+            android:textSize="16sp"
+            android:textColor="#666666"
+            android:layout_marginTop="4dp"
+            android:textStyle="italic" />
+
+        <Button
+            android:id="@+id/btnSaveWorkout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Save Workout"
+            android:layout_marginTop="12dp"
+            android:backgroundTint="#4FC3F7"
+            android:textColor="#000000"/>
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

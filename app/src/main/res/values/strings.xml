@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">FitPlan</string>
+    <string-array name="status_options">
+        <item>Choose status</item>
+        <item>Trainer</item>
+        <item>Trainee</item>
+    </string-array>
+</resources>

@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "630015635604",
+    "project_id": "fitplan-cb6f8",
+    "storage_bucket": "fitplan-cb6f8.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:630015635604:android:6828dc1ed5f302feaf8481",
+        "android_client_info": {
+          "package_name": "com.ellabs.fitplan"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "630015635604-4ld16tsbrr4dfppqk8ki3lm6g7r8du8a.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ellabs.fitplan",
+            "certificate_hash": "3500a10263df42dcd5fc6ce065d8cb74a07348cc"
+          }
+        },
+        {
+          "client_id": "630015635604-r2h32rkiie3k0fm080cl7gd60othovrk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCSVN9d6O_0FNB7JKRv_w1k8fst415T3kg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "630015635604-r2h32rkiie3k0fm080cl7gd60othovrk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
