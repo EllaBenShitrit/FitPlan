@@ -44,7 +44,7 @@ class SocialMediaActivity : AppCompatActivity() {
         workoutList.clear()
         val db = FirebaseFirestore.getInstance()
 
-        db.collection("workouts")
+        db.collection("publicWorkouts")
             .whereEqualTo("isPublic", true)
             .get()
             .addOnSuccessListener { workoutsSnapshot ->

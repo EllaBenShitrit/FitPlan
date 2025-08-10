@@ -221,7 +221,7 @@ class WorkoutDetailsActivity : AppCompatActivity(), SimpleExercisesAdapter.OnExe
                 }
 
             // Update or delete in public collection
-            val publicRef = db.collection("workouts").document(workoutId)
+            val publicRef = db.collection("publicWorkouts").document(workoutId)
 
             if (isChecked) {
                 // Make public: create or update in public workouts collection

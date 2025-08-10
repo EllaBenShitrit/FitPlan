@@ -2,6 +2,7 @@ package com.ellabs.fitplan.activities
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -60,13 +61,10 @@ class LoginActivity : AppCompatActivity() {
         val response = result.idpResponse
         if (result.resultCode == RESULT_OK) {
             // Successfully signed in
-            val user = FirebaseAuth.getInstance().currentUser
             transactToMainActivity()
         } else {
-            // Sign in failed. If response is null the user canceled the
-            // sign-in flow using the back button. Otherwise check
-            // response.getError().getErrorCode() and handle the error.
-            // ...
+            val errMsg = response?.error?.localizedMessage ?: "Sign-in canceled"
+            Log.e("LoginActivity", "Sign-in failed: $errMsg")
             Toast
                 .makeText(this,
                     "Error: Failed Logging in.",
