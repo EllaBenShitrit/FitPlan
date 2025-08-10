@@ -9,7 +9,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.ellabs.fitplan.R
-import com.ellabs.fitplan.adapters.SimpleExercisesAdapter
+import com.ellabs.fitplan.adapters.ExercisesAdapter
 import com.ellabs.fitplan.classes.Exercise
 import com.ellabs.fitplan.classes.Workout
 import android.widget.Toast
@@ -32,7 +32,7 @@ class CreateWorkoutActivity : AppCompatActivity() {
     private lateinit var recyclerView: RecyclerView
     private lateinit var saveButton: Button
     private val selectedExercises = mutableListOf<Exercise>()
-    private lateinit var adapter: SimpleExercisesAdapter
+    private lateinit var adapter: ExercisesAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -48,7 +48,7 @@ class CreateWorkoutActivity : AppCompatActivity() {
 
         // Set up RecyclerView with adapter that shows only exercise names & weights
         val exerciseWeights = loadWeights(this)
-        adapter = SimpleExercisesAdapter(selectedExercises, exerciseWeights)
+        adapter = ExercisesAdapter(selectedExercises, exerciseWeights)
         recyclerView.layoutManager = LinearLayoutManager(this)
         recyclerView.adapter = adapter
 
@@ -109,24 +109,15 @@ class CreateWorkoutActivity : AppCompatActivity() {
         Log.d("DEBUG_FLOW", "onActivityResult called")
 
         if (requestCode == Constants.REQUEST_EXERCISES && resultCode == RESULT_OK) {
-            // Get the JSON string from the intent
-            Log.d("DEBUG_FLOW", "onActivityResult called")
-            val json = data?.getStringExtra(Constants.EXTRA_SELECTED_EXERCISES)
-            Log.d("DEBUG_FLOW", "Received JSON: $json")
-            if (json != null) {
-                val type = object : TypeToken<List<Exercise>>() {}.type
-                val returnedExercises: List<Exercise> = Gson().fromJson(json, type)
-                for (exercise in returnedExercises) {
-                    Log.d("DEBUG_FLOW", "Exercise: ${exercise.name}")
-                    if (!selectedExercises.contains(exercise)) {
-                        selectedExercises.add(exercise)  // If an exercise doesn't exist on the list - adding it to the list
+            val returned: ArrayList<Exercise> =
+                data?.getParcelableArrayListExtra(Constants.EXTRA_SELECTED_EXERCISES) ?: arrayListOf()
 
-                    }
+            for (ex in returned) {
+                if (!selectedExercises.contains(ex)) {
+                    selectedExercises.add(ex)
                 }
-                adapter.notifyDataSetChanged()  // Update the RecyclerView to present the new list
-                Log.d("DEBUG_FLOW", "Adapter updated successfully")
-
             }
+            adapter.notifyDataSetChanged()
         }
     }
 

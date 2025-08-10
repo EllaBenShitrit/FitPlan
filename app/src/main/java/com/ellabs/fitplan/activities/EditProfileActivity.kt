@@ -132,9 +132,13 @@ class EditProfileActivity : AppCompatActivity() {
                 binding.editBio.setText(profile.bio)
                 setUpStatusSpinner(profile.status)
 
-                profile.imageUrl?.let {
-                    currentImageUrl = it
-                    Glide.with(this).load(it).into(binding.imageEditProfile)
+                currentImageUrl = profile.imageUrl
+                if (profile.imageUrl.isNotBlank()) {
+                    Glide.with(this)
+                        .load(profile.imageUrl)
+                        .placeholder(R.drawable.profile)
+                        .error(R.drawable.profile)
+                        .into(binding.imageEditProfile)
                 }
             },
             onFailure = { error ->

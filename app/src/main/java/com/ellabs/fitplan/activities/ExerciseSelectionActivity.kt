@@ -54,10 +54,12 @@ class ExerciseSelectionActivity : AppCompatActivity() {
 
         // By saving the chosen exercises, it will be returned to CreateWorkoutActivity
         btnSave.setOnClickListener {
-            val resultIntent = Intent()
-            val gson = Gson()
-            val json = gson.toJson(selectedExercises)
-            resultIntent.putExtra(Constants.EXTRA_SELECTED_EXERCISES, json)
+            val resultIntent = Intent().apply {
+                putParcelableArrayListExtra(
+                    Constants.EXTRA_SELECTED_EXERCISES,
+                    ArrayList(selectedExercises)
+                )
+            }
             setResult(RESULT_OK, resultIntent)
             finish()  // Return to CreateWorkoutActivity screen after saving the chosen exercises
         }

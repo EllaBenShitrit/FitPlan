@@ -2,13 +2,8 @@ package com.ellabs.fitplan.managers
 
 import com.google.firebase.Firebase
 import com.google.firebase.firestore.firestore
+import com.ellabs.fitplan.classes.UserProfile
 
-data class UserProfile(
-    val username: String = "",
-    val bio: String = "",
-    val status: String = "",
-    val imageUrl: String? = null
-)
 
 object ProfileManager {
 
@@ -25,7 +20,7 @@ object ProfileManager {
                         username = document.getString("username") ?: "",
                         bio = document.getString("bio") ?: "",
                         status = document.getString("status") ?: "",
-                        imageUrl = document.getString("imageUrl")
+                        imageUrl= document.getString("imageUrl") ?: ""
                     )
                     onSuccess(profile)
                 } else {

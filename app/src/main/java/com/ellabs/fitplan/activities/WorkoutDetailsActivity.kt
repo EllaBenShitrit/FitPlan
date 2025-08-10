@@ -1,6 +1,5 @@
 package com.ellabs.fitplan.activities
 
-import android.app.DatePickerDialog
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -14,19 +13,17 @@ import androidx.appcompat.widget.SwitchCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.ellabs.fitplan.R
-import com.ellabs.fitplan.adapters.SimpleExercisesAdapter
+import com.ellabs.fitplan.adapters.ExercisesAdapter
 import com.ellabs.fitplan.classes.Exercise
 import com.ellabs.fitplan.classes.Workout
 import com.ellabs.fitplan.managers.CalendarHelper
 import com.ellabs.fitplan.managers.loadWeights
-import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
-import java.util.Calendar
 
-class WorkoutDetailsActivity : AppCompatActivity(), SimpleExercisesAdapter.OnExerciseClickListener {
+class WorkoutDetailsActivity : AppCompatActivity(), ExercisesAdapter.OnExerciseClickListener {
 
     private lateinit var recyclerView: RecyclerView
-    private lateinit var exercisesAdapter: SimpleExercisesAdapter
+    private lateinit var exercisesAdapter: ExercisesAdapter
     private val exercisesList = mutableListOf<Exercise>()
     private lateinit var btnBack: Button
     private lateinit var tvWorkoutTitle: TextView
@@ -45,8 +42,8 @@ class WorkoutDetailsActivity : AppCompatActivity(), SimpleExercisesAdapter.OnExe
         tvWorkoutTitle = findViewById(R.id.tvWorkoutTitle)
         btnDeleteWorkout = findViewById(R.id.btnDeleteWorkout)
         btnAddWorkoutToCalendar = findViewById(R.id.btnAddWorkoutToCalendar)
-        switchIsPublic = findViewById<SwitchCompat>(R.id.switch_is_public)
-        switchLabel = findViewById<TextView>(R.id.tvSwitchLabel)
+        switchIsPublic = findViewById(R.id.switch_is_public)
+        switchLabel = findViewById(R.id.tvSwitchLabel)
         val calendarHelper = CalendarHelper(this)
 
         btnAddWorkoutToCalendar.setOnClickListener {
@@ -55,7 +52,7 @@ class WorkoutDetailsActivity : AppCompatActivity(), SimpleExercisesAdapter.OnExe
 
         val exerciseWeights = loadWeights(this)
 
-        exercisesAdapter = SimpleExercisesAdapter(exercisesList, exerciseWeights, object : SimpleExercisesAdapter.OnExerciseClickListener {
+        exercisesAdapter = ExercisesAdapter(exercisesList, exerciseWeights, object : ExercisesAdapter.OnExerciseClickListener {
             override fun onExerciseClicked(exercise: Exercise) {
                 showExerciseDialog(exercise)
             }

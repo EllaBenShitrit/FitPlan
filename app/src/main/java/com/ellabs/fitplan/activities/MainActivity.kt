@@ -80,8 +80,12 @@ class MainActivity : AppCompatActivity() {
                 tvBio.text = if (profile.bio.isNullOrBlank()) "Bio" else profile.bio
 
                 // Show profile image if exists, else show default
-                if (!profile.imageUrl.isNullOrEmpty()) {
-                    Glide.with(this).load(profile.imageUrl).into(imageProfile)
+                if (profile.imageUrl.isNotBlank()) {
+                    Glide.with(this)
+                        .load(profile.imageUrl)
+                        .placeholder(R.drawable.profile)
+                        .error(R.drawable.profile)
+                        .into(imageProfile)
                 } else {
                     imageProfile.setImageResource(R.drawable.profile)
                 }
@@ -97,30 +101,4 @@ class MainActivity : AppCompatActivity() {
             }
         )
     }
-
-//    override fun onResume() {
-//        super.onResume()
-//
-//        // Load saved data of user's profile
-//        val prefs: SharedPreferences = getSharedPreferences("profile", MODE_PRIVATE)
-//
-//        val username = prefs.getString("username", "")
-//        val status = prefs.getString("status", "")
-//        val bio = prefs.getString("bio", "")
-//
-//
-//        tvUserName.text = if (username.isNullOrEmpty()) "User Name" else username
-//        tvStatus.text = if (status.isNullOrEmpty() || status == "Choose status") "Status" else status
-//        tvBio.text = if (bio.isNullOrEmpty()) "Bio" else bio
-//
-//        val file = File(filesDir, "profile.jpg")
-//        if (file.exists()) {
-//            val bitmap = BitmapFactory.decodeFile(file.absolutePath)
-//            imageProfile.setImageBitmap(bitmap)
-//        } else {
-//            imageProfile.setImageResource(R.drawable.profile) // תמונת ברירת מחדל
-//        }
-//
-//    }
-
 }
