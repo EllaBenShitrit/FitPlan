@@ -33,10 +33,10 @@
 # Technologies Used
 - **Language:** Kotlin
 - **External Services:**
-    - Firebase Auth (user authentication, log-in & sign-up)
-    - Firebase Firestore (cloud database)
-    - Firebase Storage (profile images)
-- **UI Components:** RecyclerView, Dialogs, ImageViews
+    - Firebase Auth (user authentication - for sign-up)
+    - Firebase Firestore (cloud database - for workouts that user creates & user's profile details)
+    - Firebase Storage (user's profile images)
+- **UI Components:** RecyclerView, ConstraintLayout, LinearLayout, Dialogs, ImageViews, Button, TextView, EditText,  CheckBox, Switch.
 
 # Credit
 This project was developed by Ella Ben Shitrit as part of a final project for the Mobile Applications Development course.
